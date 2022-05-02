@@ -36,7 +36,22 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
+       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+       <script>
+       const firebaseConfig = {
+  apiKey: "AIzaSyCmjq4hhwrBlzpfk3AIf9in_RqbcUnv9cE",
+  authDomain: "login-7484.firebaseapp.com",
+  projectId: "login-7484",
+  storageBucket: "login-7484.appspot.com",
+  messagingSenderId: "649343332009",
+  appId: "1:649343332009:web:8a2fdb5c6f30f08a48c3b8",
+  measurementId: "G-MKLEVRG6GF"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+      </script>
+ <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
     function loadMainDartJs() {

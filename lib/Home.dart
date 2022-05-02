@@ -1,14 +1,16 @@
 import 'dart:ui';
 
+import 'package:appp/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class DetailsScreen extends StatelessWidget {
+class HomeDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      //bottomNavigationBar: MyStatefulWidget(),
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: SingleChildScrollView(
         child: Container(
@@ -18,7 +20,7 @@ class DetailsScreen extends StatelessWidget {
 
             children: [
               SizedBox(
-                height: 30,
+                height: 0,
               ),
               // FadeInUp(
               //  duration: Duration(milliseconds: 1500),
@@ -42,8 +44,7 @@ class DetailsScreen extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(40),
                 child: Image(
-                  image: NetworkImage(
-                      'https://static.vecteezy.com/system/resources/previews/004/553/190/large_2x/doctor-prescribing-healthy-diet-flat-illustration-obese-patient-visiting-dietitian-cartoon-characters-nutritionist-forbidding-junk-food-offering-fresh-vegetables-fruits-dairy-products-vector.jpg'),
+                  image: AssetImage('assets/images/front.jpg'),
                 ),
               ),
               // ClipOval(
@@ -94,9 +95,7 @@ class DetailsScreen extends StatelessWidget {
               //   endIndent: 0,
               //   color: Color.fromARGB(78, 168, 131, 131),
               // ),
-              SizedBox(
-                height: 20,
-              ),
+
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 0,
@@ -106,71 +105,92 @@ class DetailsScreen extends StatelessWidget {
                     Text(
                       "Wellness",
                       style: GoogleFonts.robotoSlab(
-                          color: Color.fromARGB(207, 195, 84, 255),
-                          fontSize: 43,
+                          color: Color.fromARGB(207, 91, 193, 158),
+                          //color: Color.fromARGB(207, 91, 193, 158),
+                          fontSize: 52,
                           fontWeight: FontWeight.w600),
                     ),
                     SizedBox(
                       height: 0,
                     ),
-                    SizedBox(
-                      height: 105,
-                      width: 240.0,
-                      child: Text(
-                        '''
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(207, 91, 193, 158),
+                            width: 0.5),
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                      child: SizedBox(
+                        height: 165,
+                        width: 370.0,
+                        child: Center(
+                          child: Text(
+                            '''
 
+○ A change in the way you see your health. 
+○ We’re developing technology solutions to
+   enable care teams to deliver better, faster 
+   and more connected care.
+○ The Health app helps you make sense of 
+your healthy lifestyle.
 ''',
-                        style: GoogleFonts.robotoSlab(
-                            fontSize: 16,
-                            color: Color.fromARGB(220, 100, 99, 99),
-                            fontWeight: FontWeight.w600),
+                            style: GoogleFonts.robotoSlab(
+                                fontSize: 16,
+                                color: Color.fromARGB(176, 31, 30, 30),
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Divider(
-                      height: 20,
-                      thickness: 6,
-                      indent: 20,
-                      endIndent: 20,
-                      color: Color.fromARGB(78, 168, 131, 131),
-                    ),
+                    // Divider(
+                    //   height: 20,
+                    //   thickness: 6,
+                    //   indent: 0,
+                    //   endIndent: 0,
+                    //   color: Color.fromARGB(105, 91, 193, 157),
+                    // ),
                     SizedBox(
-                      height: 20,
+                      height: 1,
                     ),
                     AnimatedContainer(
-                      duration: Duration(seconds: 3),
+                      duration: Duration(seconds: 5),
                       curve: Curves.easeIn,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
                             onTap: () {
-                              //     Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/');
                             }, // Handle your callback.
-                            splashColor: Color.fromARGB(201, 178, 103, 243)
-                                .withOpacity(1.0),
+                            splashColor: Color.fromARGB(213, 94, 203, 165),
 
                             //borderRadius: BorderRadius.circular(40.0),
 
                             child: Ink(
-                              height: 160,
-                              width: 160,
+                              height: 170,
+                              width: 175,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
+                                color: Color.fromARGB(255, 6, 6, 6),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/two.jpg'),
+                                  // image: AssetImage('assets/images/two.jpg'),
+                                  image: AssetImage('assets/nutrion.gif'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Padmasan",
+                                  "Nutritions",
                                   style: GoogleFonts.robotoSlab(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                      fontSize: 33,
+                                      color: Color.fromARGB(255, 91, 202, 91),
+                                      fontSize: 25,
                                       fontWeight: FontWeight.w600),
                                 ),
                               ),
@@ -178,27 +198,30 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/Yoga');
                             }, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             //borderRadius: BorderRadius.circular(40.0),
                             child: Ink(
-                              height: 160,
-                              width: 160,
+                              height: 170,
+                              width: 175,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/one.jpg'),
+                                  image: AssetImage('assets/y.gif'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Tadasana",
+                                  "Yoga",
                                   style: GoogleFonts.robotoSlab(
                                       color: Color.fromARGB(255, 255, 255, 255),
-                                      fontSize: 33,
+                                      fontSize: 25,
                                       fontWeight: FontWeight.w600),
                                 ),
                               ),
@@ -220,25 +243,28 @@ class DetailsScreen extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/bmiHome');
                             }, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             //borderRadius: BorderRadius.circular(40.0),
 
                             child: Ink(
-                              height: 160,
-                              width: 160,
+                              height: 170,
+                              width: 175,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/two.jpg'),
+                                  image: AssetImage('assets/BMI2.jpg'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Padmasan",
+                                  "BMI",
                                   style: GoogleFonts.robotoSlab(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 33,
@@ -249,14 +275,17 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/DiseasesPAGES');
                             }, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             //borderRadius: BorderRadius.circular(40.0),
                             child: Ink(
-                              height: 160,
-                              width: 160,
+                              height: 170,
+                              width: 175,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
                                   image: AssetImage('assets/images/one.jpg'),
@@ -266,7 +295,7 @@ class DetailsScreen extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Tadasana",
+                                  "Disease",
                                   style: GoogleFonts.robotoSlab(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 33,
@@ -292,9 +321,12 @@ class DetailsScreen extends StatelessWidget {
                           //borderRadius: BorderRadius.circular(40.0),
 
                           child: Ink(
-                            height: 160,
-                            width: 160,
+                            height: 170,
+                            width: 175,
                             decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(207, 91, 193, 158),
+                                  width: 0.5),
                               borderRadius: BorderRadius.circular(25.0),
                               image: DecorationImage(
                                 image: AssetImage('assets/images/two.jpg'),
@@ -320,9 +352,12 @@ class DetailsScreen extends StatelessWidget {
                           splashColor: Colors.brown.withOpacity(0.5),
                           //borderRadius: BorderRadius.circular(40.0),
                           child: Ink(
-                            height: 160,
-                            width: 160,
+                            height: 170,
+                            width: 175,
                             decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(207, 91, 193, 158),
+                                  width: 0.5),
                               borderRadius: BorderRadius.circular(25.0),
                               image: DecorationImage(
                                 image: AssetImage('assets/images/one.jpg'),
