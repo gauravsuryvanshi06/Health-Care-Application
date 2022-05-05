@@ -105,40 +105,73 @@ class DetailsScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(207, 91, 193, 158),
+                            width: 0.5),
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      height: 35,
+                      width: 340,
                       child: Text(
-                        "Disease, Symptoms and",
+                        "     Disease, Symptoms and",
                         style: GoogleFonts.robotoSlab(
                             color: Color.fromARGB(175, 90, 236, 185),
                             //color: Color.fromARGB(207, 91, 193, 158),
-                            fontSize: 30,
+                            fontSize: 25,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(207, 43, 255, 0), width: 1.0),
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      height: 50,
+                      width: 300,
+                      child: SizedBox(
+                        height: 60,
+                        child: Text(
+                          '''      Precautions''',
+                          style: GoogleFonts.robotoSlab(
+                              color: Color.fromARGB(134, 61, 255, 3),
 
-                    SizedBox(
-                      height: 60,
-                      child: Text(
-                        '''Precautions''',
-                        style: GoogleFonts.robotoSlab(
-                            color: Color.fromARGB(167, 59, 237, 5),
-                            //color: Color.fromARGB(207, 91, 193, 158),
-                            fontSize: 40,
-                            fontWeight: FontWeight.w600),
+                              //color: Color.fromARGB(207, 91, 193, 158),
+                              fontSize: 36,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 80,
-                      width: 250.0,
-                      child: Text(
-                        '''          
-     Stay updated with all latest
-         diseases,common health 
-    conditions     and     concerns.
+                      height: 10,
+                    ),
+                    Container(
+                      // decoration: BoxDecoration(
+                      //   border: Border.all(
+                      //       color: Color.fromARGB(207, 43, 255, 0), width: 1.0),
+                      //   borderRadius: BorderRadius.circular(15.0),
+                      // ),
+                      // height: 80,
+                      // width: 300,
+                      child: SizedBox(
+                        height: 80,
+                        width: 250.0,
+                        child: Text(
+                          '''          
+     Stay updated with all major
+       diseases,precautions,
+     common health conditions,
+       treatments and concerns.
 ''',
-                        style: GoogleFonts.robotoSlab(
-                            fontSize: 16,
-                            color: Color.fromARGB(176, 0, 0, 0),
-                            fontWeight: FontWeight.w600),
+                          style: GoogleFonts.robotoSlab(
+                              fontSize: 16,
+                              color: Color.fromARGB(176, 0, 0, 0),
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -172,6 +205,9 @@ class DetailsScreen extends StatelessWidget {
                               height: 150,
                               width: 160,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
                                   // image: AssetImage('assets/images/two.jpg'),
@@ -197,7 +233,7 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/diabetes');
                             }, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             //borderRadius: BorderRadius.circular(40.0),
@@ -205,16 +241,19 @@ class DetailsScreen extends StatelessWidget {
                               height: 160,
                               width: 160,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/one.jpg'),
+                                  image: AssetImage('assets/dibetes.jpg'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Tadasana",
+                                  "Diabetes",
                                   style: GoogleFonts.robotoSlab(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 33,
@@ -239,7 +278,7 @@ class DetailsScreen extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/tb');
                             }, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             //borderRadius: BorderRadius.circular(40.0),
@@ -248,19 +287,22 @@ class DetailsScreen extends StatelessWidget {
                               height: 160,
                               width: 160,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/two.jpg'),
+                                  image: AssetImage('assets/images/TB.png'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Padmasan",
+                                  "TB",
                                   style: GoogleFonts.robotoSlab(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                      fontSize: 33,
+                                      color: Color.fromARGB(255, 228, 189, 99),
+                                      fontSize: 30,
                                       fontWeight: FontWeight.w600),
                                 ),
                               ),
@@ -268,7 +310,7 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/aids');
                             }, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             //borderRadius: BorderRadius.circular(40.0),
@@ -276,16 +318,19 @@ class DetailsScreen extends StatelessWidget {
                               height: 160,
                               width: 160,
                               decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(207, 91, 193, 158),
+                                    width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/one.jpg'),
+                                  image: AssetImage('assets/images/aidss.gif'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Text(
-                                  "Tadasana",
+                                  "Aids",
                                   style: GoogleFonts.robotoSlab(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 33,
@@ -305,7 +350,7 @@ class DetailsScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/');
+                            Navigator.pushNamed(context, '/covid');
                           }, // Handle your callback.
                           splashColor: Colors.brown.withOpacity(0.5),
                           //borderRadius: BorderRadius.circular(40.0),
@@ -314,16 +359,19 @@ class DetailsScreen extends StatelessWidget {
                             height: 160,
                             width: 160,
                             decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(207, 91, 193, 158),
+                                  width: 0.5),
                               borderRadius: BorderRadius.circular(25.0),
                               image: DecorationImage(
-                                image: AssetImage('assets/images/two.jpg'),
+                                image: AssetImage('assets/covid.jpg'),
                                 fit: BoxFit.fill,
                               ),
                             ),
                             child: Align(
                               alignment: Alignment.bottomCenter,
                               child: Text(
-                                "Padmasan",
+                                "Covid",
                                 style: GoogleFonts.robotoSlab(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 33,
@@ -342,6 +390,9 @@ class DetailsScreen extends StatelessWidget {
                             height: 160,
                             width: 160,
                             decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(207, 91, 193, 158),
+                                  width: 0.5),
                               borderRadius: BorderRadius.circular(25.0),
                               image: DecorationImage(
                                 image: AssetImage('assets/images/one.jpg'),

@@ -226,7 +226,7 @@ class _MeasureState extends State<Measure> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                  )),
+                  ),),
             ),
           ),
         ),

@@ -163,7 +163,7 @@ your healthy lifestyle.
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '/Nutrition');
                             }, // Handle your callback.
                             splashColor: Color.fromARGB(213, 94, 203, 165),
 

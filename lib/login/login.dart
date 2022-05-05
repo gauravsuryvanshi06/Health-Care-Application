@@ -4,6 +4,7 @@ import 'package:appp/login/home.dart';
 import 'package:appp/login/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 //////////////////////////////
@@ -11,48 +12,37 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: ListView(
         padding: EdgeInsets.all(8.0),
         children: <Widget>[
-          SizedBox(height: 80),
-          // logo
-          Column(
-            children: [
-              FlutterLogo(
-                size: 55,
-              ),
-              SizedBox(height: 50),
-              Text(
-                'Welcome back!',
-                style: TextStyle(fontSize: 24),
-              ),
-            ],
+          SizedBox(height: 55),
+          ClipRRect(
+//borderRadius: BorderRadius.circular(30),
+            child: Image(
+              image: AssetImage('assets/images/h1.gif'),
+// image: AssetImage('assets/yoga1.gif'),
+            ),
           ),
-
-          SizedBox(
-            height: 50,
-          ),
-
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(10.0),
             child: LoginForm(),
           ),
-
-          SizedBox(height: 20),
-
           Row(
             children: <Widget>[
-              SizedBox(width: 30),
-              Text('New here ? ',
+              Text('           New here ? ',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               GestureDetector(
                 onTap: () {
-                  // Navigator.pushNamed(context, '/signup');
+// Navigator.pushNamed(context, '/signup');
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Signup()));
                 },
                 child: Text('Get Registered Now!!',
-                    style: TextStyle(fontSize: 20, color: Colors.blue)),
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 105, 238, 240),
+                    )),
               )
             ],
           ),
@@ -71,7 +61,9 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  var auth;
+  get auth => null;
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> signup(BuildContext context) async {
     final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -84,7 +76,7 @@ class _LoginFormState extends State<LoginForm> {
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken);
 
-      // Getting users credential
+// Getting users credential
       UserCredential result = await auth.signInWithCredential(authCredential);
       User? user = result.user;
 
@@ -92,7 +84,7 @@ class _LoginFormState extends State<LoginForm> {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => HomeDetailsScreen()));
       } // if result not null we simply call the MaterialpageRoute,
-      // for go to the HomePage screen
+// for go to the HomePage screen
     }
   }
 
@@ -105,154 +97,194 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          // email
-          TextFormField(
-            // initialValue: 'Input text',
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.email_outlined),
-              labelText: 'Email',
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  const Radius.circular(100.0),
-                ),
-              ),
-            ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            onSaved: (val) {
-              email = val;
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
+    return SingleChildScrollView(
+      child: Form(
+        key: _formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+// email
 
-          // password
-          TextFormField(
-            // initialValue: 'Input text',
-            decoration: InputDecoration(
-              labelText: 'Password',
-              prefixIcon: Icon(Icons.lock_outline),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  const Radius.circular(100.0),
-                ),
-              ),
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
-                child: Icon(
-                  _obscureText ? Icons.visibility_off : Icons.visibility,
-                ),
-              ),
-            ),
-            obscureText: _obscureText,
-            onSaved: (val) {
-              password = val;
-            },
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-          ),
-
-          SizedBox(height: 30),
-          Card(
-            margin: EdgeInsets.only(top: 200, bottom: 200, left: 30, right: 30),
-            elevation: 20,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  "GEEKS FOR GEEKS",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: MaterialButton(
-                    color: Colors.teal[100],
-                    elevation: 10,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 30.0,
-                          width: 30.0,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image:
-                                    AssetImage('assets/images/googleimage.png'),
-                                fit: BoxFit.cover),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text("Sign In with Google")
-                      ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    prefixIconColor: Color.fromARGB(255, 105, 238, 240),
+                    suffixIconColor: Color.fromARGB(255, 105, 238, 240),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Icon(
+                        Icons.email_outlined,
+                        size: 29,
+                        color: Color.fromARGB(255, 105, 238, 240),
+                      ),
                     ),
-
-                    // by onpressed we call the function signup function
-                    onPressed: () {
-                      signup(context);
-                    },
+                    labelText: 'Email',
+                    labelStyle: TextStyle(
+                      color: Color.fromARGB(255, 105, 238, 240),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        const Radius.circular(40.0),
+                      ),
+                    ),
                   ),
-                )
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                  onSaved: (val) {
+                    email = val;
+                  },
+                ),
+                height: 48,
+                width: 320,
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+
+// password
+            TextFormField(
+              decoration: InputDecoration(
+                prefixIconColor: Color.fromARGB(255, 105, 238, 240),
+                suffixIconColor: Color.fromARGB(255, 105, 238, 240),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.lock_outlined,
+                    size: 29,
+                    color: Color.fromARGB(255, 105, 238, 240),
+                  ),
+                ),
+                labelText: 'Password',
+                labelStyle: TextStyle(
+                  color: Color.fromARGB(255, 105, 238, 240),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    const Radius.circular(40.0),
+                  ),
+                ),
+                suffixIcon: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                  child: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                  ),
+                ),
+              ),
+              obscureText: _obscureText,
+              onSaved: (val) {
+                password = val;
+              },
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Column(
+              children: [
+                Container(
+                  child: SizedBox(
+                    height: 49,
+                    width: 320,
+                    child: ElevatedButton(
+                      onPressed: () {
+// Respond to button press
+
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+
+                          AuthenticationHelper()
+                              .signIn(email: email!, password: password!)
+                              .then((result) {
+                            if (result == null) {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          HomeDetailsScreen()));
+                            } else {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                content: Text(
+                                  result,
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ));
+                            }
+                          });
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 105, 238, 240),
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(24.0)))),
+                      child: Text(
+                        'Login',
+                        style: GoogleFonts.robotoSlab(
+                            color: Color.fromARGB(207, 255, 255, 255),
+                            fontSize: 25,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 54,
-            width: 184,
-            child: ElevatedButton(
-              onPressed: () {
-                // Respond to button press
-
-                if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-
-                  AuthenticationHelper()
-                      .signIn(email: email!, password: password!)
-                      .then((result) {
-                    if (result == null) {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Home()));
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(
-                          result,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ));
-                    }
-                  });
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(24.0)))),
-              child: Text(
-                'Login',
-                style: TextStyle(fontSize: 24),
+            SizedBox(
+              height: 20,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/Home');
+              }, // Handle your callback.
+              splashColor: Colors.brown.withOpacity(0.5),
+              //borderRadius: BorderRadius.circular(40.0),
+              child: Ink(
+                height: 30,
+                width: 250,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  border: Border.all(
+                      color: Color.fromARGB(207, 91, 193, 158), width: 0.5),
+                ),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Text(
+                    "Already Register",
+                    style: GoogleFonts.robotoSlab(
+                        color: Color.fromARGB(164, 65, 159, 161),
+                        fontSize: 23,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class YogaDetailsScreen extends StatelessWidget {
+class Nutrition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;

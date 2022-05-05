@@ -5,6 +5,7 @@ import 'package:appp/YogaPAGES/vrikshasana.dart';
 import 'package:appp/bmi/home_page.dart';
 import 'package:appp/homeYOGA.dart';
 import 'package:appp/login/login.dart';
+import 'package:appp/nutrition/nutrition.dart';
 import 'package:appp/screens/details_screen.dart';
 import 'package:appp/widgets/aids.dart';
 import 'package:appp/widgets/bottom_nav_bar.dart';
@@ -62,6 +63,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => Login(),
 
 //Routes
+        '/Home': (context) => HomeDetailsScreen(),
+        '/Nutrition': (context) => Nutrition(),
         '/Yoga': (context) => YogaDetailsScreen(),
         '/padmasan': (context) => padmasan(),
         // '/Exercise3': (context) => Exercise(),
