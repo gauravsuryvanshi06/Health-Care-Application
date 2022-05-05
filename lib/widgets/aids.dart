@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class aids extends StatelessWidget {
-  const aids({Key? key}) : super(key: key);
+  aids({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

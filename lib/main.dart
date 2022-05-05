@@ -5,6 +5,11 @@ import 'package:appp/YogaPAGES/vrikshasana.dart';
 import 'package:appp/bmi/home_page.dart';
 import 'package:appp/homeYOGA.dart';
 import 'package:appp/login/login.dart';
+import 'package:appp/nutrition/12-20.dart';
+import 'package:appp/nutrition/20-30.dart';
+import 'package:appp/nutrition/30-45.dart';
+import 'package:appp/nutrition/45-60.dart';
+import 'package:appp/nutrition/6-12.dart';
 import 'package:appp/nutrition/nutrition.dart';
 import 'package:appp/screens/details_screen.dart';
 import 'package:appp/widgets/aids.dart';
@@ -13,7 +18,8 @@ import 'package:appp/widgets/cancer.dart';
 import 'package:appp/widgets/category_card.dart';
 import 'package:appp/widgets/covid.dart';
 import 'package:appp/widgets/diabetes.dart';
-import 'package:appp/widgets/search_bar.dart';
+import 'package:appp/widgets/cancer.dart';
+
 import 'package:appp/widgets/tb.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +71,12 @@ class MyApp extends StatelessWidget {
 //Routes
         '/Home': (context) => HomeDetailsScreen(),
         '/Nutrition': (context) => Nutrition(),
+        '/6-12': (context) => sixTo12Diet(),
+        '/13-20': (context) => thirteenTo20(),
+        '/20-30': (context) => twentyTo30(),
+        '/30-45': (context) => thirtyTo45(),
+        '/60': (context) => upToSixty(),
+
         '/Yoga': (context) => YogaDetailsScreen(),
         '/padmasan': (context) => padmasan(),
         // '/Exercise3': (context) => Exercise(),
