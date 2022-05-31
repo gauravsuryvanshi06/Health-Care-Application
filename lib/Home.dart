@@ -288,7 +288,7 @@ your healthy lifestyle.
                                     width: 0.5),
                                 borderRadius: BorderRadius.circular(25.0),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/images/one.jpg'),
+                                  image: AssetImage('assets/images/front.jpg'),
                                   fit: BoxFit.fill,
                                 ),
                               ),
@@ -310,80 +310,83 @@ your healthy lifestyle.
                     SizedBox(
                       height: 25,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/');
-                          }, // Handle your callback.
-                          splashColor: Colors.brown.withOpacity(0.5),
-                          //borderRadius: BorderRadius.circular(40.0),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //   children: [
+                    //     InkWell(
+                    //       onTap: () {
+                    //         Navigator.pushNamed(context, '/');
+                    //       }, // Handle your callback.
+                    //       splashColor: Colors.brown.withOpacity(0.5),
+                    //       //borderRadius: BorderRadius.circular(40.0),
 
-                          child: Ink(
-                            height: 170,
-                            width: 175,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: Color.fromARGB(207, 91, 193, 158),
-                                  width: 0.5),
-                              borderRadius: BorderRadius.circular(25.0),
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/two.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Text(
-                                "Padmasan",
-                                style: GoogleFonts.robotoSlab(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 33,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
+                    //       child: Ink(
+                    //         height: 170,
+                    //         width: 175,
+                    //         decoration: BoxDecoration(
+                    //           border: Border.all(
+                    //               color: Color.fromARGB(207, 91, 193, 158),
+                    //               width: 0.5),
+                    //           borderRadius: BorderRadius.circular(25.0),
+                    //           image: DecorationImage(
+                    //             image: AssetImage('assets/images/two.jpg'),
+                    //             fit: BoxFit.fill,
+                    //           ),
+                    //         ),
+                    //         child: Align(
+                    //           alignment: Alignment.bottomCenter,
+                    //           child: Text(
+                    //             "Padmasan",
+                    //             style: GoogleFonts.robotoSlab(
+                    //                 color: Color.fromARGB(255, 255, 255, 255),
+                    //                 fontSize: 33,
+                    //                 fontWeight: FontWeight.w600),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/ChatApp');
+                      }, // Handle your callback.
+                      splashColor: Colors.brown.withOpacity(0.5),
+                      //borderRadius: BorderRadius.circular(40.0),
+                      child: Ink(
+                        height: 170,
+                        width: 375,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Color.fromARGB(207, 91, 193, 158),
+                              width: 0.5),
+                          borderRadius: BorderRadius.circular(25.0),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/spaces.jpeg'),
+                            fit: BoxFit.fill,
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/');
-                          }, // Handle your callback.
-                          splashColor: Colors.brown.withOpacity(0.5),
-                          //borderRadius: BorderRadius.circular(40.0),
-                          child: Ink(
-                            height: 170,
-                            width: 175,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: Color.fromARGB(207, 91, 193, 158),
-                                  width: 0.5),
-                              borderRadius: BorderRadius.circular(25.0),
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/one.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Text(
-                                "Tadasana",
-                                style: GoogleFonts.robotoSlab(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 33,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                            "Community",
+                            style: GoogleFonts.robotoSlab(
+                                color: Color.fromARGB(255, 154, 248, 218),
+                                fontSize: 33,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
-                      ],
+                      ),
                     ),
-                    SizedBox(
-                      height: 30,
-                    )
                   ],
+                  // ),
+                  // SizedBox(
+                  //   height: 30,
+                  // )
+                  //  ],
                 ),
               ),
+              SizedBox(
+                height: 30,
+              )
             ], //gif image
           ),
         ),

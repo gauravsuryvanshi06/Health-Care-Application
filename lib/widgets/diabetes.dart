@@ -59,11 +59,12 @@ class diabetes extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 100,
+                  horizontal: 40,
                 ),
-                child: Column(
+                child: Column( 
                   children: [
                     Text(
+
                       "DIABETES-MELLITUS",
                       style: TextStyle(
                           color: Colors.black,
