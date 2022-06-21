@@ -12,7 +12,7 @@ final Uri _url = Uri.parse('https://flutter.dev');
 
 // ignore: camel_case_types
 class cancer extends StatelessWidget {
-  const cancer({Key? key}) : super(key: key);
+  cancer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
