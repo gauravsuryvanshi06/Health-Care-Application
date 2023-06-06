@@ -1,3 +1,12 @@
+
+- Using our application smart healthcare app,health related suggestions will be given to users. 
+- Providing user friendly community to interact with experts and other users is possible trough this application and it
+helps user to adopt healthy lifestyle.
+- Using our app user can get basic information about health at theirfinger tip.
+- User can get basic diet, can find their BMI, and sources of different
+diseases nearby
+- Health community has vast application area in Cancer where patientscan discuss
+with each other
 # [SMART HEALTHCARE APPLICATION'.pdf](https://github.com/gauravsuryvanshi06/Health-Care-Application/files/11621696/SMART.HEALTHCARE.APPLICATION.pdf)
 
 - ### [useCase.pdf](https://github.com/gauravsuryvanshi06/Health-Care-Application/files/11621697/useCase.pdf)
