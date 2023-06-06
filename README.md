@@ -1,8 +1,8 @@
 - Using our app user can get basic information about health at theirfinger tip.
 - User can get basic diet, can find their BMI, and sources of different
-diseases nearby
+diseases nearby.
 - Health community has vast application area in Cancer where patientscan discuss
-with each other
+with each other.
 
 - Using our application smart healthcare app,health related suggestions will be given to users. 
 - Providing user friendly community to interact with experts and other users is possible trough this application and it
